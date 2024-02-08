@@ -1,0 +1,72 @@
+ls - list files from directory
+man - describe an command by official manuals
+clear - clear terminal, normally by using shortcut(Ctrl+L)
+cd - change directory
+pwd - returns actual working directory
+whoami - returns user in shell's charge
+>> and << - stdout of a command turns stdin of other command
+use "" to access compose folders's name -> cd 'era uma vez'
+touch - change file timestamp, normally to create new files(change null timestamp to the immediate time
+nano - text editors, rival of vim
+cat - print stdout from file
+mv - move one file from a directory to another
+cp - copy files and directories
+find - search for files beginning at the current directory
+head - show the first part of stdout from file
+tail - show the last part of stdout from file
+less - show the stdout from file incrementally
+rm - remove file
+rmdir - remove directory
+rm -rf - force interactivelly removal of files/directories
+hostname - show or set system's hostname
+hostname -i - show or set system's IP Address
+ip a - show network parameters, same as ipconfig from Windows, but more compact
+grep - returns which from stdin matches the following pattern
+ping - send ICMP packages to the following IP address
+free - show memory usage by system
+free -h - show memory usage for human reading
+free -m - show memory usage as megabytes 
+top - show all running processes
+htop - more user friendly top command, for human reading
+ps - show current processes running on the shell
+ps aux - show all processes as BSD style
+kill - kill a process by identifying it's ID
+df -h - show space available of all currently mounted systems for human reading
+ncdu - shows disk usage by directories
+uname - return system information
+lscpu - display information about CPU architecture
+lsusb - list USB devices
+history - show past commands
+echo - display a line of text, can be used as stdin for another commands
+wc - gives meaningful information about the file or input of a process separate by pipes
+piping - redirects input or output by pipelining the commands
+sort - write sorted concatenation of all files to stdout
+uniq - report or omit repeated lines
+expansions - symbols that represent certain information(username, directory, environment variables)
+diff - compare files or commands line by line
+find - search a file in a directory hierarchy
+grep - print lines that match a following pattern
+du - estimate file space usage
+df - more accurate information about file space usage, often followed by the -h option to become readable
+ps - show all current processes
+top - display Linux processes like task manager in Windows
+kill - send a signal to a proccess, by default it is TERM to force termination
+killall - send a signal to all processes running, similar to kill but to multiple processes
+jobs - report status of background processes that are running
+fg - pull background process to the forward plane
+bg - push forward process to the background plane, can be used by the operator & at the end of the command
+gzip - compress file with gzip format
+gunzip - another method of compression
+tar - way to archive a bundle of files
+nano - text editor built in Linux
+alias - associate words to be executed by alias
+xargs - allow stdin to be argument to commands that only works with input(alone)
+ln - create links between files, can be hard links which the file linked carry the same inode and act like
+the same file on another filesystem/partition, or can be soft link which works as shortcuts(reference) to
+another file
+who - show users logged
+passwd - change user password
+chown - change file owner and group
+chmod - change permissions of the file
+
+
