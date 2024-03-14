@@ -1,0 +1,2 @@
+//mod.rs == __init__.py
+//another option is to create a <folders_name>.rs in the same directory of main.rs
