@@ -1,0 +1,10 @@
+Criado em tempo de execução
+Subir um thread é mais rápido que subir outro processo
+*Memória é compartilhada entre os threads!
+Global Interpreter Lock para todas as threads...
+Mutexes(mutual exclusion) é um mecanismo que permite apenas uma thread
+por ver acessar determinado recurso e serão necessárias para acessar dados
+compartilhados
+
+
+*Opera CONCORRENTEMENTE

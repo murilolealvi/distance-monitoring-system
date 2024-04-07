@@ -1,0 +1,8 @@
+Um novo processo independente é lançado
+Memória não é compartilhada
+Mutexes não é necessário
+Um Global Interpreter Lock(mecanismo que garante que apenas um thread
+execute o interpretador) para cada processo
+
+
+*Opera PARALELAMENTE
