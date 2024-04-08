@@ -1,0 +1,13 @@
+Pelo protocolo TCP, dados são recebidos bufferizados em streaming,
+logo não há limite de bytes do pacote. Entretanto, pelo protocolo UDP,
+pacotes recebidos possuem cabeçalho de 64KB dedicado ao IP header.
+* a função recvfrom usado em UDP captura exatamente um pacote
+
+
+Arquivos grandes são parcelados em buffers e enviados sequencialmente.
+
+A implementação em TCP deve garantir consentimento de ambas as partes
+da conexão. Portanto, um trato é mantido até transmissão de todos os
+dados.
+Para UDP, essa garantia não é necessária. O server fica todo o tempo
+lendo pacotes e não há necessidade de verificação de quem está o enviando.
