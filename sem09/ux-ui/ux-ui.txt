@@ -1,0 +1,5 @@
+User Interface: voltado à detalhes visuais, maneira como o usuário irá
+usufruir do produto.
+User Experience: pesquisar e desenvolver aspectos da interação do usuário para com
+a empresa, produto ou serviço.
+Trabalham juntos para refinar a produção do produto.
