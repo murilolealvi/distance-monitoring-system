@@ -30,8 +30,6 @@ esp-idf-hal = { version = "0.43.1", default-features = false }
 anyhow = "1.0.82"
 embedded-svc = "0.27.1"
 heapless = "0.8.0"
-embassy-executor = "0.4.0"
-embassy-net = { version = "0.4.0", features = ["tcp", "dns", "std", "medium-ethernet", "dhcpv4", "log"] }
 futures = "0.3.30"
 
 [build-dependencies]

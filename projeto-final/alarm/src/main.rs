@@ -2,7 +2,6 @@ use std::str::from_utf8;
 use futures::executor::block_on;
 use anyhow;
 use esp_idf_svc::timer::EspTaskTimerService;
-use esp_idf_sys::esp_http_client_read;
 use heapless::String as hpString;
 use esp_idf_hal::{delay::FreeRtos, peripherals::Peripherals, gpio::*};
 use embedded_svc::http::client::Client;
@@ -10,15 +9,14 @@ use embedded_svc::wifi::{AuthMethod, ClientConfiguration, Configuration};
 use esp_idf_svc::eventloop::EspSystemEventLoop;
 use esp_idf_svc::http::client::{Configuration as HttpConfig, EspHttpConnection};
 use esp_idf_svc::nvs::EspDefaultNvsPartition;
-use esp_idf_svc::wifi::{BlockingWifi, EspWifi, AsyncWifi};
-use embassy_executor::Spawner;
+use esp_idf_svc::wifi::{EspWifi, AsyncWifi};
 
 
 
 
-const WIFI_SSID: &str = "Dimitry";
-const WIFI_PASS: &str = "010987#@";
-const HTTPSERVER_API: &str = "http://192.168.100.147/distance";
+const WIFI_SSID: &str = "Galaxy M62";
+const WIFI_PASS: &str = "chapolin";
+const HTTPSERVER_API: &str = "http://192.168.40.8/distance";
 fn main() -> anyhow::Result<()> {
     // It is necessary to call this function once. Otherwise some patches to the runtime
     // implemented by esp-idf-sys might not link properly. See https://github.com/esp-rs/esp-idf-template/issues/71
@@ -62,11 +60,11 @@ fn main() -> anyhow::Result<()> {
     loop {
         let request = httpclient.get(HTTPSERVER_API)?;
         let mut response = request.submit()?;
-        println!("HTTP code: {}\n", response.status());
+        println!("HTTP code: {}", response.status());
         let bytes = response.read(&mut buffer)?;
         let string = from_utf8(&buffer[0..bytes])?;
         let distance_cm: f32 = string.parse().unwrap();
-        println!("Distance: {}",string);
+        println!("Distance: {}\n",string);
 
         if distance_cm > 40.0 {
             red.set_low()?;

@@ -5,7 +5,6 @@ use esp_idf_hal::{delay::{Delay, FreeRtos},
     units::FromValueType
 };
 
-use esp_idf_sys::{sleep, vTaskDelay, CONFIG_ESP_INT_WDT_TIMEOUT_MS, CONFIG_ESP_TASK_WDT_TIMEOUT_S};
 use liquid_crystal::{
     Bus4Bits, Clear, Command, LiquidCrystal, Text, I2C as LiquidCrystal_I2C, LCD16X2
 };
@@ -28,8 +27,8 @@ use futures::executor::block_on;
 mod web;
 
 const HD44780_ADDR: u8 = 0x27;
-const WIFI_SSID: &str = "Dimitry";
-const WIFI_PASS: &str = "010987#@";
+const WIFI_SSID: &str = "Galaxy M62";
+const WIFI_PASS: &str = "chapolin";
 //const MQTT_ENDPOINT: &str = "mqtt://192.168.100.141:1883";
 const MQTT_ENDPOINT: &str = "mqtt://test.mosquitto.org";
 const MQTT_CLIENT_ID: &str = "NODEMCU_ESP-32s";
@@ -164,16 +163,4 @@ async fn connect_wifi(wifi: &mut AsyncWifi<EspWifi<'static>>) -> anyhow::Result<
     println!("Wifi is ready!!");
 
     Ok(())
-}
-
-async fn get_interval(echo: PinDriver<'static, Gpio33, Input>) -> (u128, u128) {
-    while !echo.is_high() {}
-        
-    let echo_start = EspSystemTime{}.now().as_micros();
-        
-    while !echo.is_low() {}
-
-    let echo_end = EspSystemTime{}.now().as_micros();
-
-    return(echo_start, echo_end)
 }
